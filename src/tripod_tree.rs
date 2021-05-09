@@ -686,6 +686,7 @@ fn assert_element(expected: Option<&str>, actual: Option<&String>) {
     assert_eq!(expected, actual.map(String::as_str));
 }
 
+#[cfg(feature = "experimental-ghost-cursor")]
 #[track_caller]
 fn assert_element_mut(expected: Option<&str>, actual: Option<&mut String>) {
     assert_eq!(expected, actual.map(|s| &**s));
